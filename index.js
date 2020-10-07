@@ -1,9 +1,10 @@
 const express = require('express')
 const mongoose = require('mongoose')
+// const bodyParser = require('body-parser')
 const app = express()
-
+const { port, dbURI } = require('./config/environment')
+// const logger = require('./lib/logger')
 const router = require('./config/router')
-const { PORT, dbURI } = require('./config/environment')
 
 mongoose.connect(dbURI, { useNewUrlParser: true , useUnifiedTopology: true },
   (err) => {
@@ -13,4 +14,4 @@ mongoose.connect(dbURI, { useNewUrlParser: true , useUnifiedTopology: true },
 
 app.use('/api', router)
 
-app.listen(PORT, () => console.log(`Up and running on port ${PORT}`))
+app.listen(port, () => console.log(`Up and running on port ${port}`))

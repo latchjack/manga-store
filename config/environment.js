@@ -1,5 +1,5 @@
-const PORT = process.env.PORT || 8000
-const dbURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/manga4u'
+const port = process.env.PORT || 4000
+const dbURI = process.env.MONGODB_URI || 'mongodb://localhost/manga4u-api'
+const secret = process.env.SECRET || 'shhh its a secret'
 
-module.exports = { PORT, dbURI }
-
+module.exports = { port, dbURI, secret }
